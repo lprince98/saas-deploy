@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>요금제 | The Digital Curator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#2d3133",
+                        "secondary-fixed-dim": "#b1cad7",
+                        "inverse-on-surface": "#eff1f4",
+                        "surface-bright": "#f7f9fc",
+                        "inverse-primary": "#bac3ff",
+                        "surface-container-high": "#e6e8eb",
+                        "surface": "#f7f9fc",
+                        "tertiary-fixed": "#ffdcc6",
+                        "outline": "#757684",
+                        "surface-dim": "#d8dadd",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#6c3400",
+                        "surface-variant": "#e0e3e6",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#cde6f4",
+                        "primary-container": "#3f51b5",
+                        "tertiary-container": "#8f4700",
+                        "primary-fixed-dim": "#bac3ff",
+                        "on-secondary-container": "#506873",
+                        "on-surface-variant": "#454652",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#eceef1",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#c5c5d4",
+                        "error": "#ba1a1a",
+                        "primary": "#24389c",
+                        "secondary": "#4a626d",
+                        "surface-tint": "#4355b9",
+                        "background": "#f7f9fc",
+                        "on-surface": "#191c1e",
+                        "on-primary-fixed": "#00105c",
+                        "tertiary-fixed-dim": "#ffb784",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#713700",
+                        "on-primary-fixed-variant": "#293ca0",
+                        "on-tertiary-fixed": "#301400",
+                        "on-background": "#191c1e",
+                        "on-secondary-fixed-variant": "#334a55",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f2f4f7",
+                        "on-secondary-fixed": "#051e28",
+                        "on-primary-container": "#cacfff",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e0e3e6",
+                        "primary-fixed": "#dee0ff",
+                        "on-tertiary-container": "#ffc7a2",
+                        "secondary-fixed": "#cde6f4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "8px",
+                        "lg": "12px",
+                        "xl": "16px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', 'Noto Sans KR', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', 'Noto Sans KR', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .premium-gradient {
+            background: linear-gradient(135deg, #24389c 0%, #3f51b5 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-slate-50/80 backdrop-blur-xl flex justify-between items-center px-8 py-4 max-w-full">
+<div class="text-xl font-bold tracking-tighter text-indigo-900">
+            The Digital Curator
+        </div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="font-manrope tracking-tight font-semibold text-indigo-700 border-b-2 border-indigo-700 pb-1 transition-all duration-300 hover:opacity-80" href="#">요금제</a>
+<a class="font-manrope tracking-tight font-semibold text-slate-600 hover:text-indigo-600 transition-all duration-300 hover:opacity-80" href="#">솔루션</a>
+<a class="font-manrope tracking-tight font-semibold text-slate-600 hover:text-indigo-600 transition-all duration-300 hover:opacity-80" href="#">리소스</a>
+</nav>
+<div class="flex items-center space-x-4">
+<button class="font-manrope tracking-tight font-semibold text-slate-600 hover:text-indigo-600 transition-all duration-300 scale-95 active:scale-100">로그인</button>
+<button class="font-manrope tracking-tight font-semibold bg-primary text-on-primary px-6 py-2 rounded-lg transition-all duration-300 hover:opacity-80 scale-95 active:scale-100">회원가입</button>
+</div>
+</header>
+<main class="pt-32 pb-24 px-6 md:px-12 lg:px-24">
+<!-- Hero Section -->
+<div class="max-w-4xl mx-auto text-center mb-20">
+<h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 text-on-surface">
+                명료함의 가치.
+            </h1>
+<p class="text-xl text-secondary font-body max-w-2xl mx-auto mb-12">
+                지적 유산을 담기 위한 완벽한 캔버스를 선택하세요. 개인적인 성찰부터 전 세계적인 아카이브까지.
+            </p>
+<!-- Toggle -->
+<div class="flex items-center justify-center space-x-4">
+<span class="text-sm font-semibold font-label text-secondary">월간 결제</span>
+<button class="w-14 h-8 bg-surface-container-high rounded-full p-1 relative transition-colors duration-300">
+<div class="w-6 h-6 bg-primary rounded-full absolute right-1"></div>
+</button>
+<div class="flex items-center space-x-2">
+<span class="text-sm font-semibold font-label text-on-surface">연간 결제</span>
+<span class="bg-secondary-container text-on-secondary-container text-[10px] uppercase tracking-wider font-bold px-2 py-0.5 rounded-full">20% 절약</span>
+</div>
+</div>
+</div>
+<!-- Pricing Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto items-stretch">
+<!-- Free Tier -->
+<div class="bg-surface-container-low rounded-xl p-8 flex flex-col border border-transparent hover:translate-y-[-4px] transition-all duration-300">
+<div class="mb-8">
+<h3 class="text-lg font-bold text-secondary mb-2">무료 (Free)</h3>
+<div class="flex items-baseline space-x-1 mb-4">
+<span class="text-4xl font-extrabold tracking-tighter text-on-surface">₩0</span>
+<span class="text-secondary font-medium">/평생</span>
+</div>
+<p class="text-sm text-secondary leading-relaxed">
+                        큐레이션 여정을 시작하기 위한 필수 도구입니다.
+                    </p>
+</div>
+<div class="flex-grow space-y-4 mb-8">
+<div class="flex items-start space-x-3">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5" data-icon="check">check</span>
+<span class="text-sm text-on-surface">최대 100개의 노트</span>
+</div>
+<div class="flex items-start space-x-3">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5" data-icon="check">check</span>
+<span class="text-sm text-on-surface">마크다운 지원</span>
+</div>
+<div class="flex items-start space-x-3 text-secondary/50">
+<span class="material-symbols-outlined text-sm mt-0.5" data-icon="lock">lock</span>
+<span class="text-sm">협업용 노트북</span>
+</div>
+<div class="flex items-start space-x-3 text-secondary/50">
+<span class="material-symbols-outlined text-sm mt-0.5" data-icon="lock">lock</span>
+<span class="text-sm">우선 지원 서비스</span>
+</div>
+</div>
+<button class="w-full py-4 text-sm font-bold font-manrope bg-surface-container-highest text-on-surface rounded-lg hover:bg-surface-container-high transition-colors">
+                    큐레이션 시작하기
+                </button>
+</div>
+<!-- Pro Tier (Highlighted) -->
+<div class="premium-gradient rounded-xl p-8 flex flex-col shadow-2xl scale-105 z-10 hover:translate-y-[-4px] transition-all duration-300 relative overflow-hidden">
+<!-- Subtle Texture Overlay -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;"></div>
+<div class="absolute top-4 right-4">
+<span class="bg-primary-fixed text-on-primary-fixed text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">가장 인기 있음</span>
+</div>
+<div class="mb-8 relative">
+<h3 class="text-lg font-bold text-primary-fixed mb-2">프로 (Pro)</h3>
+<div class="flex items-baseline space-x-1 mb-4">
+<span class="text-4xl font-extrabold tracking-tighter text-on-primary">₩15,000</span>
+<span class="text-primary-fixed font-medium">/월</span>
+</div>
+<p class="text-sm text-on-primary-container leading-relaxed">
+                        디지털 아카이브의 잠재력을 최대한으로 발휘하세요.
+                    </p>
+</div>
+<div class="flex-grow space-y-4 mb-8 relative">
+<div class="flex items-start space-x-3">
+<span class="material-symbols-outlined text-primary-fixed text-sm mt-0.5" data-icon="verified">verified</span>
+<span class="text-sm text-on-primary">무제한 노트 및 저장 공간</span>
+</div>
+<div class="flex items-start space-x-3">
+<span class="material-symbols-outlined text-primary-fixed text-sm mt-0.5" data-icon="verified">verified</span>
+<span class="text-sm text-on-primary">고급 검색 및 OCR</span>
+</div>
+<div class="flex items-start space-x-3">
+<span class="material-symbols-outlined text-primary-fixed text-sm mt-0.5" data-icon="verified">verified</span>
+<span class="text-sm text-on-primary">양방향 링크 기능</span>
+</div>
+<div class="flex items-start space-x-3">
+<span class="material-symbols-outlined text-primary-fixed text-sm mt-0.5" data-icon="verified">verified</span>
+<span class="text-sm text-on-primary">커스텀 도메인 갤러리</span>
+</div>
+<div class="flex items-start space-x-3">
+<span class="material-symbols-outlined text-primary-fixed text-sm mt-0.5" data-icon="verified">verified</span>
+<span class="text-sm text-on-primary">우선 순위 이메일 지원</span>
+</div>
+</div>
+<button class="w-full py-4 text-sm font-bold font-manrope bg-white text-primary rounded-lg shadow-sm hover:bg-slate-50 transition-colors relative">
+                    프로로 업그레이드
+                </button>
+</div>
+<!-- Enterprise Tier -->
+<div class="bg-surface-container-low rounded-xl p-8 flex flex-col border border-transparent hover:translate-y-[-4px] transition-all duration-300">
+<div class="mb-8">
+<h3 class="text-lg font-bold text-secondary mb-2">엔터프라이즈 (Enterprise)</h3>
+<div class="flex items-baseline space-x-1 mb-4">
+<span class="text-4xl font-extrabold tracking-tighter text-on-surface">₩65,000</span>
+<span class="text-secondary font-medium">/월</span>
+</div>
+<p class="text-sm text-secondary leading-relaxed">
+                        팀과 기관을 위한 확장 가능한 인텔리전스.
+                    </p>
+</div>
+<div class="flex-grow space-y-4 mb-8">
+<div class="flex items-start space-x-3">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5" data-icon="check">check</span>
+<span class="text-sm text-on-surface">Pro 요금제의 모든 기능</span>
+</div>
+<div class="flex items-start space-x-3">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5" data-icon="check">check</span>
+<span class="text-sm text-on-surface">SSO 및 SAML 통합</span>
+</div>
+<div class="flex items-start space-x-3">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5" data-icon="check">check</span>
+<span class="text-sm text-on-surface">관리자 대시보드</span>
+</div>
+<div class="flex items-start space-x-3">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5" data-icon="check">check</span>
+<span class="text-sm text-on-surface">전담 성공 매니저</span>
+</div>
+</div>
+<button class="w-full py-4 text-sm font-bold font-manrope bg-surface-container-highest text-on-surface rounded-lg hover:bg-surface-container-high transition-colors">
+                    영업팀에 문의하기
+                </button>
+</div>
+</div>
+<!-- Bento Grid Feature Highlight -->
+<section class="mt-32">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold mb-4">왜 The Digital Curator를 선택해야 할까요?</h2>
+<div class="w-12 h-1 bg-primary mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-auto md:h-[600px] max-w-7xl mx-auto">
+<!-- Large Feature -->
+<div class="md:col-span-2 md:row-span-2 bg-surface-container-low rounded-xl p-8 relative overflow-hidden flex flex-col justify-end group">
+<img alt="Workplace" class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:scale-105 transition-transform duration-700" data-alt="minimalist modern office interior with large windows and soft natural light reflecting off clean surfaces" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZNog7VgrN3ZMJKYVFOKO2wyZ_vs2a7Phzzx99k-J3woT80CsvRAzYnjrvAmzoiA3a7rFnIFZpEWZs6n1hv7PedCP0A3IYL-oi8JG4B7YXyflIBxhynypNdHqL3hACs9PPiDpXkY_qNJu1eO5diKrmUmYwimyM4mG1JoHOLeyIDQV21z7o0lwSFfuQQYt9qExXvCoZzbtFIvx7uxBxpkO7HSywaL8WaRldaVn2JoYk2WzNCYO740sY5lrKonYSpp9PMa_wezsH0A"/>
+<div class="relative z-10">
+<span class="material-symbols-outlined text-4xl text-primary mb-4" data-icon="auto_awesome">auto_awesome</span>
+<h4 class="text-2xl font-bold mb-2">신경망 조직화</h4>
+<p class="text-secondary max-w-md">저희 AI는 단순히 노트를 저장하는 것에 그치지 않습니다. 당신이 미처 깨닫지 못했던 아이디어들 사이의 연결 고리를 매핑합니다.</p>
+</div>
+</div>
+<!-- Secondary Feature -->
+<div class="md:col-span-2 bg-secondary-container rounded-xl p-8 flex items-center justify-between overflow-hidden">
+<div>
+<h4 class="text-xl font-bold text-on-secondary-container mb-1">글로벌 동기화</h4>
+<p class="text-sm text-on-secondary-container opacity-80">온라인이든 오프라인이든 어떤 기기에서든 아카이브에 접속하세요.</p>
+</div>
+<span class="material-symbols-outlined text-5xl text-on-secondary-container/20" data-icon="cloud_sync">cloud_sync</span>
+</div>
+<!-- Third Feature -->
+<div class="bg-surface-container-high rounded-xl p-6 flex flex-col justify-center text-center">
+<span class="material-symbols-outlined text-3xl text-primary mb-2" data-icon="security">security</span>
+<h5 class="font-bold">강력한 암호화</h5>
+<p class="text-xs text-secondary">당신의 생각을 위한 제로 지식 보안 환경을 제공합니다.</p>
+</div>
+<!-- Fourth Feature -->
+<div class="bg-primary-container rounded-xl p-6 flex flex-col justify-center text-center">
+<span class="material-symbols-outlined text-3xl text-on-primary-container mb-2" data-icon="history">history</span>
+<h5 class="font-bold text-on-primary-container">스냅샷</h5>
+<p class="text-xs text-on-primary-container opacity-80">어떤 노트든 과거의 특정 시점으로 되돌릴 수 있습니다.</p>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="mt-32 max-w-3xl mx-auto">
+<h2 class="text-2xl font-bold text-center mb-12">자주 묻는 질문</h2>
+<div class="space-y-6">
+<div class="p-6 rounded-lg bg-surface-container-low">
+<h4 class="font-bold mb-2">구독을 언제든지 취소할 수 있나요?</h4>
+<p class="text-sm text-secondary leading-relaxed">네, 계정 설정에서 언제든지 구독을 취소하실 수 있습니다. 결제 주기가 끝날 때까지 해당 요금제의 기능을 계속 사용하실 수 있습니다.</p>
+</div>
+<div class="p-6 rounded-lg bg-surface-container-low">
+<h4 class="font-bold mb-2">학생 할인이 있나요?</h4>
+<p class="text-sm text-secondary leading-relaxed">물론입니다. 인증된 학생은 Pro 요금제에 대해 50% 할인을 받으실 수 있습니다. 관련 증빙 서류와 함께 지원팀에 문의해 주세요.</p>
+</div>
+<div class="p-6 rounded-lg bg-surface-container-low">
+<h4 class="font-bold mb-2">무료 요금제에서 노트 한도를 초과하면 어떻게 되나요?</h4>
+<p class="text-sm text-secondary leading-relaxed">기존 노트의 읽기 및 편집은 여전히 가능하지만, 요금제를 업그레이드하거나 일부 콘텐츠를 아카이브하기 전까지는 새로운 노트를 생성할 수 없습니다.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-100 py-16 px-6 md:px-12 border-t-0">
+<div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12">
+<div class="col-span-2">
+<div class="text-xl font-bold tracking-tighter text-indigo-950 mb-4">
+                    The Digital Curator
+                </div>
+<p class="text-secondary max-w-sm text-sm leading-relaxed">
+                    깊이의 가치를 아는 분들을 위해 설계되었습니다. 당신의 아이디어를 존중하는 도구와 함께 지적 유산을 쌓아가세요.
+                </p>
+</div>
+<div>
+<h5 class="font-bold mb-4 text-xs uppercase tracking-widest text-slate-400">제품</h5>
+<ul class="space-y-2 text-sm text-secondary">
+<li><a class="hover:text-primary" href="#">기능</a></li>
+<li><a class="hover:text-primary" href="#">보안</a></li>
+<li><a class="hover:text-primary" href="#">데스크톱 앱</a></li>
+<li><a class="hover:text-primary" href="#">모바일</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-4 text-xs uppercase tracking-widest text-slate-400">회사</h5>
+<ul class="space-y-2 text-sm text-secondary">
+<li><a class="hover:text-primary" href="#">소개</a></li>
+<li><a class="hover:text-primary" href="#">개인정보 처리방침</a></li>
+<li><a class="hover:text-primary" href="#">이용약관</a></li>
+<li><a class="hover:text-primary" href="#">문의하기</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-16 pt-8 text-xs text-slate-400 flex flex-col md:flex-row justify-between items-center border-t border-slate-200">
+<p>© 2024 The Digital Curator. All rights reserved.</p>
+<div class="flex space-x-6 mt-4 md:mt-0">
+<a class="hover:text-primary" href="#">Twitter</a>
+<a class="hover:text-primary" href="#">LinkedIn</a>
+<a class="hover:text-primary" href="#">GitHub</a>
+</div>
+</div>
+</footer>
+</body></html>

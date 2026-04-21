@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Digital Curator | 에디터</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#2d3133",
+                    "secondary-fixed-dim": "#b1cad7",
+                    "inverse-on-surface": "#eff1f4",
+                    "surface-bright": "#f7f9fc",
+                    "inverse-primary": "#bac3ff",
+                    "surface-container-high": "#e6e8eb",
+                    "surface": "#f7f9fc",
+                    "tertiary-fixed": "#ffdcc6",
+                    "outline": "#757684",
+                    "surface-dim": "#d8dadd",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#6c3400",
+                    "surface-variant": "#e0e3e6",
+                    "on-error-container": "#93000a",
+                    "secondary-container": "#cde6f4",
+                    "primary-container": "#3f51b5",
+                    "tertiary-container": "#8f4700",
+                    "primary-fixed-dim": "#bac3ff",
+                    "on-secondary-container": "#506873",
+                    "on-surface-variant": "#454652",
+                    "on-secondary": "#ffffff",
+                    "surface-container": "#eceef1",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#c5c5d4",
+                    "error": "#ba1a1a",
+                    "primary": "#24389c",
+                    "secondary": "#4a626d",
+                    "surface-tint": "#4355b9",
+                    "background": "#f7f9fc",
+                    "on-surface": "#191c1e",
+                    "on-primary-fixed": "#00105c",
+                    "tertiary-fixed-dim": "#ffb784",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed-variant": "#713700",
+                    "on-primary-fixed-variant": "#293ca0",
+                    "on-tertiary-fixed": "#301400",
+                    "on-background": "#191c1e",
+                    "on-secondary-fixed-variant": "#334a55",
+                    "on-primary": "#ffffff",
+                    "surface-container-low": "#f2f4f7",
+                    "on-secondary-fixed": "#051e28",
+                    "on-primary-container": "#cacfff",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#e0e3e6",
+                    "primary-fixed": "#dee0ff",
+                    "on-tertiary-container": "#ffc7a2",
+                    "secondary-fixed": "#cde6f4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .editor-focus-mode {
+            background: rgba(247, 249, 252, 0.9);
+            backdrop-filter: blur(40px);
+        }
+        .ghost-border {
+            outline: 1px solid rgba(197, 197, 212, 0.15);
+        }
+        .text-editorial-path {
+            letter-spacing: -0.02em;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- TopNavBar (Shared Component) -->
+<header class="bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-xl fixed top-0 w-full z-50 flex justify-between items-center px-8 py-4 max-w-full">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-indigo-900 dark:text-indigo-100 font-headline">The Digital Curator</span>
+<nav class="hidden md:flex gap-6">
+<a class="text-slate-600 dark:text-slate-400 hover:text-indigo-600 font-manrope tracking-tight font-semibold transition-all duration-300 hover:opacity-80" href="#">요금제</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-indigo-600 font-manrope tracking-tight font-semibold transition-all duration-300 hover:opacity-80" href="#">솔루션</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-indigo-600 font-manrope tracking-tight font-semibold transition-all duration-300 hover:opacity-80" href="#">리소스</a>
+</nav>
+</div>
+<div class="flex gap-4 items-center">
+<button class="text-indigo-700 dark:text-indigo-400 font-manrope tracking-tight font-semibold scale-95 active:scale-100 transition-transform">로그인</button>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-5 py-2 rounded-lg font-manrope tracking-tight font-semibold scale-95 active:scale-100 transition-transform">회원가입</button>
+</div>
+</header>
+<div class="flex pt-[72px] h-screen overflow-hidden">
+<!-- SideNavBar (Shared Component) -->
+<aside class="bg-slate-100 dark:bg-slate-900 h-screen w-64 fixed left-0 top-0 pt-20 flex flex-col h-full p-4 space-y-2 z-40">
+<div class="mb-6 px-2">
+<div class="flex items-center gap-3 mb-1">
+<img alt="User Profile" class="w-10 h-10 rounded-full" data-alt="professional headshot of a creative director in soft studio lighting with a neutral gray background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIKjpe_xKYjCL4vBd7zzIkVMaj8HVTa_YyEFCFztCWRS6GYWvzellLQzS0yulRn0t2E_eNpHtqsxSLU079pljtgpd8wIyRX0k0i5x-GffLUA9HJGE80JenhX1rF1MvquinNHC5oE1aamMYT-D67k1ftvjQA0gh_o8bxpBDYO-SPVAdfyNCafzRJHDM3XHdLg57U4o3cXvDKLTZ6q3V0VXlTMr5W5Qgb6XsMq05xFzucgcegxEWMWEE-2K_JWyj6kiM3NWWUpUOUA"/>
+<div>
+<p class="text-lg font-bold text-indigo-950 dark:text-white font-headline">나의 갤러리</p>
+<p class="text-xs text-slate-500">개인 워크스페이스</p>
+</div>
+</div>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-container text-white py-3 rounded-lg font-semibold mb-4 shadow-sm scale-95 active:scale-100 transition-transform">
+<span class="material-symbols-outlined mr-2">add</span>새 노트
+            </button>
+<div class="flex flex-col space-y-1">
+<a class="bg-white dark:bg-slate-800 text-indigo-700 dark:text-indigo-300 rounded-lg shadow-sm font-semibold flex items-center p-2.5 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="description">description</span>모든 노트
+                </a>
+<a class="text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800/50 flex items-center p-2.5 rounded-lg transition-transform duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="star">star</span>즐겨찾기
+                </a>
+<a class="text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800/50 flex items-center p-2.5 rounded-lg transition-transform duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="folder">folder</span>노트북
+                </a>
+<a class="text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800/50 flex items-center p-2.5 rounded-lg transition-transform duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="group">group</span>공유됨
+                </a>
+<a class="text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800/50 flex items-center p-2.5 rounded-lg transition-transform duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="delete">delete</span>휴지통
+                </a>
+</div>
+<div class="mt-auto pt-4 space-y-1">
+<a class="text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800/50 flex items-center p-2.5 rounded-lg transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="settings">settings</span>설정
+                </a>
+<a class="text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800/50 flex items-center p-2.5 rounded-lg transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="help">help</span>도움말
+                </a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-64 flex overflow-hidden">
+<!-- Editor Canvas -->
+<section class="flex-1 overflow-y-auto px-12 py-16 bg-surface">
+<div class="max-w-3xl mx-auto">
+<!-- Title Input -->
+<input class="w-full bg-transparent border-none focus:ring-0 text-[3.5rem] font-headline font-extrabold text-indigo-950 placeholder-indigo-900/10 mb-8 text-editorial-path" placeholder="제목 없는 노트" type="text" value="정적의 건축학"/>
+<!-- Rich Text Toolbar -->
+<div class="flex items-center gap-1 mb-8 p-1 bg-surface-container-low rounded-xl ghost-border w-fit">
+<button class="p-2 hover:bg-surface-container-high rounded-lg text-on-surface-variant transition-colors" title="굵게"><span class="material-symbols-outlined">format_bold</span></button>
+<button class="p-2 hover:bg-surface-container-high rounded-lg text-on-surface-variant transition-colors" title="기울임꼴"><span class="material-symbols-outlined">format_italic</span></button>
+<button class="p-2 hover:bg-surface-container-high rounded-lg text-on-surface-variant transition-colors" title="밑줄"><span class="material-symbols-outlined">format_underlined</span></button>
+<div class="w-[1px] h-6 bg-outline-variant/30 mx-1"></div>
+<button class="p-2 hover:bg-surface-container-high rounded-lg text-on-surface-variant transition-colors" title="글머리 기호"><span class="material-symbols-outlined">format_list_bulleted</span></button>
+<button class="p-2 hover:bg-surface-container-high rounded-lg text-on-surface-variant transition-colors" title="번호 매기기"><span class="material-symbols-outlined">format_list_numbered</span></button>
+<div class="w-[1px] h-6 bg-outline-variant/30 mx-1"></div>
+<button class="p-2 hover:bg-surface-container-high rounded-lg text-on-surface-variant transition-colors" title="인용구"><span class="material-symbols-outlined">format_quote</span></button>
+<button class="p-2 hover:bg-surface-container-high rounded-lg text-on-surface-variant transition-colors" title="링크 삽입"><span class="material-symbols-outlined">link</span></button>
+<button class="p-2 hover:bg-surface-container-high rounded-lg text-on-surface-variant transition-colors" title="이미지 삽입"><span class="material-symbols-outlined">image</span></button>
+</div>
+<!-- Editor Body -->
+<div class="prose prose-slate max-w-none font-body text-lg leading-relaxed text-secondary space-y-6">
+<p>디지털 시대에 침묵은 사치입니다. 우리는 끊임없는 알림, 경고, 그리고 쉴 새 없이 쏟아지는 정보의 홍수 속에 살고 있습니다. 디지털 삶을 큐레이팅한다는 것은 외부 세계의 소음 없이 집중력이 자랄 수 있는 공간을 의도적으로 디자인하는 것을 의미합니다.</p>
+<div class="my-8 rounded-xl overflow-hidden shadow-sm">
+<img alt="Quiet Workspace" data-alt="minimalist aesthetic desk with a single desk lamp and a notebook in a clean white room with soft natural shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyY-k4BNkWYq7dJikqfCi7VY-9VzvNun2HmSK2Snm9rPW9VO5QiY-tzK41FLpZYRrnZxIb-H9Cg5lc9eQf1_MababOEFx7JcSwHuJj3XXfF7a_m8muaKBRsXyGZBSpQAIC2yzuHBDvietl2-PIcIIQml2CTd9hB0F7GeWhulzR1WoOv3Q3RzRRCdgwsf54kRHXssufgCW2XHq0maKtwHJMziG7xBxKwXdrVhVW10EOrpJQiJ0cpPvXgi9fK8tq74IQqc2g6ochpw"/>
+</div>
+<p>인터페이스 디자인의 진정한 세련됨은 무엇을 추가하느냐가 아니라, 무엇을 제거할 용기가 있느냐에 달려 있습니다. 생각을 위한 조용한 갤러리는 관심을 강요하지 않고, 부드럽게 붙잡아 둡니다. <strong>톤의 깊이</strong>와 <strong>의도적인 비대칭</strong>을 우선시함으로써, 우리는 시선을 강제하기보다 자연스럽게 유도하는 리듬을 만듭니다.</p>
+<ul class="space-y-3">
+<li class="flex items-start gap-3">
+<span class="text-primary mt-1">•</span>
+<span>여백을 구조적 요소로 수용하십시오.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="text-primary mt-1">•</span>
+<span>장식보다 타이포그래피를 우선시하십시오.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="text-primary mt-1">•</span>
+<span>단순한 미적 감각이 아닌, 의도의 표식으로 색상을 사용하십시오.</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Inspector Sidebar (Note Details) -->
+<aside class="w-80 bg-surface-container-low p-8 overflow-y-auto flex flex-col gap-8">
+<div>
+<h3 class="text-xs font-bold uppercase tracking-widest text-secondary/60 mb-4 font-headline">메타데이터</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="text-sm text-on-surface-variant">생성일</span>
+<span class="text-sm font-medium text-on-surface">2023년 10월 24일</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-sm text-on-surface-variant">최근 수정</span>
+<span class="text-sm font-medium text-on-surface">2분 전</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-sm text-on-surface-variant">단어 수</span>
+<span class="text-sm font-medium text-on-surface">342</span>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-xs font-bold uppercase tracking-widest text-secondary/60 mb-4 font-headline">분류</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-medium">디자인 이론</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-medium">철학</span>
+<button class="px-3 py-1 border border-outline-variant/30 text-on-surface-variant rounded-full text-xs font-medium hover:bg-surface-container-high transition-colors">+ 태그 추가</button>
+</div>
+</div>
+<div>
+<h3 class="text-xs font-bold uppercase tracking-widest text-secondary/60 mb-4 font-headline">액세스 권한</h3>
+<div class="flex items-center gap-3 p-3 bg-surface-container-lowest rounded-xl shadow-sm">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm">lock</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-on-surface">비공개 노트</p>
+<p class="text-xs text-on-surface-variant">나만 편집 가능</p>
+</div>
+</div>
+</div>
+<div class="mt-auto pt-8 flex gap-3">
+<button class="flex-1 bg-surface-container-high text-on-secondary-container py-2.5 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[20px]">ios_share</span>공유
+                    </button>
+<button class="flex-1 bg-gradient-to-br from-primary to-primary-container text-white py-2.5 rounded-lg font-semibold flex items-center justify-center gap-2 shadow-md hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[20px]">save</span>저장
+                    </button>
+</div>
+</aside>
+</main>
+</div>
+<!-- Contextual Focus Mode Trigger -->
+<div class="fixed bottom-8 right-8 z-50">
+<button class="w-14 h-14 bg-inverse-surface text-inverse-on-surface rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform" title="몰입 모드">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">fullscreen</span>
+</button>
+</div>
+</body></html>

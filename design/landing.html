@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Digital Curator | 정교한 노트 테이킹 경험</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#2d3133",
+                    "secondary-fixed-dim": "#b1cad7",
+                    "inverse-on-surface": "#eff1f4",
+                    "surface-bright": "#f7f9fc",
+                    "inverse-primary": "#bac3ff",
+                    "surface-container-high": "#e6e8eb",
+                    "surface": "#f7f9fc",
+                    "tertiary-fixed": "#ffdcc6",
+                    "outline": "#757684",
+                    "surface-dim": "#d8dadd",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#6c3400",
+                    "surface-variant": "#e0e3e6",
+                    "on-error-container": "#93000a",
+                    "secondary-container": "#cde6f4",
+                    "primary-container": "#3f51b5",
+                    "tertiary-container": "#8f4700",
+                    "primary-fixed-dim": "#bac3ff",
+                    "on-secondary-container": "#506873",
+                    "on-surface-variant": "#454652",
+                    "on-secondary": "#ffffff",
+                    "surface-container": "#eceef1",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#c5c5d4",
+                    "error": "#ba1a1a",
+                    "primary": "#24389c",
+                    "secondary": "#4a626d",
+                    "surface-tint": "#4355b9",
+                    "background": "#f7f9fc",
+                    "on-surface": "#191c1e",
+                    "on-primary-fixed": "#00105c",
+                    "tertiary-fixed-dim": "#ffb784",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed-variant": "#713700",
+                    "on-primary-fixed-variant": "#293ca0",
+                    "on-tertiary-fixed": "#301400",
+                    "on-background": "#191c1e",
+                    "on-secondary-fixed-variant": "#334a55",
+                    "on-primary": "#ffffff",
+                    "surface-container-low": "#f2f4f7",
+                    "on-secondary-fixed": "#051e28",
+                    "on-primary-container": "#cacfff",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#e0e3e6",
+                    "primary-fixed": "#dee0ff",
+                    "on-tertiary-container": "#ffc7a2",
+                    "secondary-fixed": "#cde6f4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope", "sans-serif"],
+                    "body": ["Inter", "sans-serif"],
+                    "label": ["Inter", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0px 32px 64px -12px rgba(25, 28, 30, 0.06);
+        }
+        .glass-panel {
+            background: rgba(247, 249, 252, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #24389c 0%, #3f51b5 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-xl flex justify-between items-center px-8 py-4 max-w-full">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-indigo-900 dark:text-indigo-100 font-headline">The Digital Curator</span>
+<div class="hidden md:flex gap-6 items-center">
+<a class="font-manrope tracking-tight font-semibold text-slate-600 dark:text-slate-400 hover:text-indigo-600 transition-all duration-300 hover:opacity-80" href="#">요금제</a>
+<a class="font-manrope tracking-tight font-semibold text-slate-600 dark:text-slate-400 hover:text-indigo-600 transition-all duration-300 hover:opacity-80" href="#">솔루션</a>
+<a class="font-manrope tracking-tight font-semibold text-slate-600 dark:text-slate-400 hover:text-indigo-600 transition-all duration-300 hover:opacity-80" href="#">리소스</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="font-manrope tracking-tight font-semibold text-slate-600 dark:text-slate-400 hover:text-indigo-600 transition-all duration-300 hover:opacity-80 scale-95 active:scale-100 transition-transform">로그인</button>
+<button class="bg-primary hover:bg-primary-container text-white px-5 py-2.5 rounded-lg font-manrope tracking-tight font-semibold transition-all duration-300 scale-95 active:scale-100 transition-transform">시작하기</button>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="px-8 py-20 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
+<div class="flex-1 space-y-8">
+<div class="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label text-sm font-medium">
+                    New: AI 기반 문맥 검색 기능 출시
+                </div>
+<h1 class="text-6xl md:text-7xl font-headline font-extrabold tracking-tighter text-on-surface leading-[1.1]">
+                    당신의 사유를 위한 <br/><span class="text-primary italic">디지털 갤러리.</span>
+</h1>
+<p class="text-xl text-secondary max-w-lg leading-relaxed">
+                    복잡한 리스트에서 벗어나세요. The Digital Curator는 당신의 아이디어, 연구, 일상의 영감을 위한 고대비의 감각적인 에디토리얼 환경을 제공합니다.
+                </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="hero-gradient text-white px-8 py-4 rounded-lg font-headline font-bold text-lg scale-95 active:scale-100 transition-all editorial-shadow">
+                        무료로 시작하기
+                    </button>
+<button class="bg-surface-container-high text-on-surface px-8 py-4 rounded-lg font-headline font-bold text-lg scale-95 active:scale-100 transition-all">
+                        데모 보기
+                    </button>
+</div>
+</div>
+<div class="flex-1 relative">
+<div class="relative z-10 editorial-shadow rounded-xl overflow-hidden bg-surface-container-lowest p-2 border border-outline-variant/10">
+<img class="rounded-lg w-full h-auto" data-alt="타이포그래피 중심의 깔끔한 노트 테이킹 인터페이스가 보이는 세련된 노트북과 부드러운 자연광이 어우러진 미니멀한 작업 공간" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1X3X5Goh2I-_3CPEpk0JWFt6r_w_bPpMf9xyzmCbGDIAAit_evnSBPR7g7BG3a6dqENzeB78jPx45lvR_f4UL4Dx5kYqx088emLJinxZWHPrpoJyoOPTlwQvERxyTcam26BllziMmPA7OL05UfIAg-NHxh0eHnyKn482JlS-A4qx3yC9csVTBuZ7J6dEluXQpYGTboiM_xwrgoRV1ZQe8YuM5BHmqj5lXxIhNpQBX3rBHXAnElFlyF5DBC82Isd6nRwP0i41w0A"/>
+</div>
+<div class="absolute -top-12 -right-12 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-12 -left-12 w-64 h-64 bg-secondary-container/30 rounded-full blur-3xl"></div>
+</div>
+</section>
+<!-- Bento Features Grid -->
+<section class="px-8 py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16 text-center">
+<h2 class="text-4xl font-headline font-bold tracking-tight mb-4">모든 디테일에 담긴 정교함.</h2>
+<p class="text-secondary max-w-2xl mx-auto">소음보다는 명확함의 가치를 아는 분들을 위해 설계되었습니다. 우리는 톤의 깊이와 건축적 정밀함에 집중합니다.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[280px]">
+<!-- Large Feature: Rich Text -->
+<div class="md:col-span-2 row-span-2 bg-surface-container-lowest rounded-xl p-10 flex flex-col justify-between hover:translate-y-[-4px] transition-transform duration-300">
+<div class="max-w-md">
+<span class="material-symbols-outlined text-primary text-4xl mb-6" data-icon="edit_note">edit_note</span>
+<h3 class="text-3xl font-headline font-bold mb-4">리치 텍스트 에디토리얼 슈트</h3>
+<p class="text-secondary leading-relaxed">프리미엄 에디토리얼 레이아웃을 닮은 집필 환경을 경험하세요. 자동화된 계층 구조, 의도적인 여백, 그리고 방해 요소 없는 몰입을 제공합니다.</p>
+</div>
+<img class="w-full h-48 object-cover rounded-lg mt-8 opacity-90" data-alt="전문적인 집필 미학을 강조하는 고급 질감의 노트와 우아한 만년필 클로즈업" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoQvD8CyjIzZzQlipFcJJ8bpBQpS9yS92Dd2Y9G9bZXrNmDo-KnSV68wyamh53jCJSaq2DwHvTfr9_Y2U-anwe_6X2eLXhaQTX7q5csWhV0EDtjtAKEV9k43iueYZs_rvx0QjUY2__mGIYAH20YXibJJgmwBmUOz5ywdFEYIFRuYtx3U087HwfKNGvv1-7kVDvLc2qjHuKxNTFD3Ruj414L0cro8zy1BjNaQvO6u1teBjuIdt0bFtIMaCDNjncl997qy1mt5I5Ug"/>
+</div>
+<!-- Small Feature: Cloud Sync -->
+<div class="bg-surface-container-highest rounded-xl p-8 flex flex-col justify-center text-center hover:translate-y-[-4px] transition-transform duration-300">
+<span class="material-symbols-outlined text-primary text-4xl mb-4 mx-auto" data-icon="cloud_sync">cloud_sync</span>
+<h3 class="text-xl font-headline font-bold mb-2">클라우드 동기화</h3>
+<p class="text-secondary text-sm">모든 기기에서 당신의 생각을 즉각적이고 안전하게 미러링합니다.</p>
+</div>
+<!-- Small Feature: Smart Search -->
+<div class="bg-primary text-white rounded-xl p-8 flex flex-col justify-center text-center hover:translate-y-[-4px] transition-transform duration-300">
+<span class="material-symbols-outlined text-on-primary-container text-4xl mb-4 mx-auto" data-icon="manage_search">manage_search</span>
+<h3 class="text-xl font-headline font-bold mb-2">스마트 검색</h3>
+<p class="text-on-primary-container text-sm">단순한 키워드를 넘어 의도까지 파악하는 문맥적 발견 기능입니다.</p>
+</div>
+<!-- Horizontal Feature -->
+<div class="md:col-span-3 bg-surface-container-low border border-outline-variant/15 rounded-xl p-10 flex flex-col md:flex-row items-center gap-12 mt-4">
+<div class="flex-1">
+<h3 class="text-2xl font-headline font-bold mb-4">보편적 접근성</h3>
+<p class="text-secondary">웹 앱, 네이티브 데스크톱 클라이언트, 모바일 컴패니언으로 어디서나 이용 가능합니다. 영감이 떠오르는 모든 곳에서 Curator는 기록할 준비가 되어 있습니다.</p>
+</div>
+<div class="flex gap-4">
+<div class="px-6 py-3 bg-surface-container-lowest rounded-lg font-semibold flex items-center gap-2 editorial-shadow">
+<span class="material-symbols-outlined" data-icon="laptop_mac">laptop_mac</span> macOS
+                            </div>
+<div class="px-6 py-3 bg-surface-container-lowest rounded-lg font-semibold flex items-center gap-2 editorial-shadow">
+<span class="material-symbols-outlined" data-icon="smartphone">smartphone</span> iOS
+                            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Social Proof Section -->
+<section class="px-8 py-24 max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-xl">
+<h2 class="text-4xl font-headline font-bold tracking-tight mb-4">전 세계 큐레이터들의 사랑을 받습니다.</h2>
+<p class="text-secondary">생각의 프로세스를 한 단계 높인 50,000명 이상의 전문가들과 함께하세요.</p>
+</div>
+<div class="flex gap-2">
+<button class="p-3 rounded-full border border-outline-variant/20 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<button class="p-3 rounded-full border border-outline-variant/20 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="p-10 rounded-xl bg-surface-container-low border border-outline-variant/10 space-y-6">
+<div class="flex gap-1 text-primary">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-xl font-body leading-relaxed text-on-surface">"마침내 스프레드시트처럼 느껴지지 않는 노트 앱을 찾았습니다. 타이포그래피와 여백 덕분에 글을 쓰면서 진정으로 깊게 생각할 수 있습니다."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="부드러운 포커스의 배경에서 중립적인 분위기의 디자이너 프로필 사진" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK_oZ7OR-_lOz3wppeh47tyfdeK0pOYrsQ1wfEGpckimtyhtTWx7Himbr8drv2wZP63rtmyOWkGPO1po-wfaN86Xwrlr8v7N8EZssM0PgCv8yewkil8W6n6wZPVwN4JO62Wlw4HKQ8bLuVrFhUuFQ1KJ_fJ6MngYiQI_D7SCdn_X27N-8Rdq8t_Gy4sCvs-Ym9Z_pfAhB4yDmy57vW5cQnrinSq4x2gE9H47rR5S6Rv16cO287yyoyXA0py69_xYvRcU6bOTxAwA"/>
+</div>
+<div>
+<p class="font-bold">Marcus Chen</p>
+<p class="text-sm text-secondary">Flux 크리에이티브 디렉터</p>
+</div>
+</div>
+</div>
+<div class="p-10 rounded-xl bg-surface-container-low border border-outline-variant/10 space-y-6">
+<div class="flex gap-1 text-primary">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-xl font-body leading-relaxed text-on-surface">"The Digital Curator는 연구 논문을 위한 강력한 기능과 저널링을 위한 아름다움을 동시에 갖춘 유일한 도구입니다."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="밝은 사무실 환경에서 살짝 미소 짓고 있는 여성의 프로필 사진" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAe5R6P3QLb7DtMOpBBMKa3n-adDhxWHxRambk8i79LWyZw8QptCfgt--Lfs-CcNTq7iT7CvrAcVWOSv0rN7bJzr22DHAd5EpWyk6KOPYI0L916wHK5wAVc-w5UCHjj51zfPSeX2aQqMRsrauxyVy1zAllQj84E4m7gHYNtaPXfJjmOR4xk_0abrnRYTV8YsVSI5IQji_vx4MKXC1-3BU8xmfv-kY3huERe97nc1DQJDLVFzXXPM0ZCP6qm_lfIpbJWX7cCoHA1_g"/>
+</div>
+<div>
+<p class="font-bold">Elena Rodriguez</p>
+<p class="text-sm text-secondary">PhD 연구원</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="px-8 py-24">
+<div class="max-w-5xl mx-auto hero-gradient rounded-3xl p-12 md:p-20 text-center text-white relative overflow-hidden">
+<div class="relative z-10 space-y-8">
+<h2 class="text-4xl md:text-5xl font-headline font-extrabold tracking-tight">당신의 레거시를 큐레이팅할 준비가 되셨나요?</h2>
+<p class="text-on-primary-container text-lg max-w-xl mx-auto">지금 14일 무료 프리미엄 트라이얼을 시작하세요. 신용카드는 필요 없습니다. 디지털 갤러리의 차이를 경험해 보세요.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="bg-white text-primary px-10 py-4 rounded-lg font-headline font-bold text-lg hover:bg-surface-container-lowest transition-colors editorial-shadow">
+                            무료로 시작하기
+                        </button>
+<button class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-4 rounded-lg font-headline font-bold text-lg hover:bg-white/20 transition-colors">
+                            상담 신청하기
+                        </button>
+</div>
+</div>
+<!-- Background Decorations -->
+<div class="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -mr-24 -mt-24 blur-3xl"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-black/10 rounded-full -ml-12 -mb-12 blur-2xl"></div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-surface-container-low border-t-0 pt-20 pb-12 px-8">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-12 mb-16">
+<div class="col-span-2 space-y-6">
+<span class="text-2xl font-bold tracking-tighter text-indigo-900 font-headline">The Digital Curator</span>
+<p class="text-secondary max-w-xs">탁월한 디자인을 통해 세상이 지식을 캡처하고, 정리하고, 발견하는 방식을 혁신합니다.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-secondary hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="share">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-secondary hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="mail">mail</span>
+</a>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="font-headline font-bold text-on-surface">제품</h4>
+<ul class="space-y-2 text-secondary text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">기능 소개</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">요금제</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">노트 에디터</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">연동 서비스</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-headline font-bold text-on-surface">리소스</h4>
+<ul class="space-y-2 text-secondary text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">문서</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">헬프 센터</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">커뮤니티</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">API 레퍼런스</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-headline font-bold text-on-surface">회사</h4>
+<ul class="space-y-2 text-secondary text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">회사 소개</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">채용</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">개인정보 처리방침</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">이용약관</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-headline font-bold text-on-surface">고객 지원</h4>
+<ul class="space-y-2 text-secondary text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">시스템 상태</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">문의하기</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-4 text-secondary text-xs">
+<p>© 2024 The Digital Curator. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-primary" href="#">쿠키 설정</a>
+<a class="hover:text-primary" href="#">글로벌 프라이버시</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

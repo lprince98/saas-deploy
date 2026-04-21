@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────
+   Design Tokens — The Digital Curator
+   Material Design 3 Color System
+───────────────────────────────────────── */
+:root {
+  --color-primary: #24389c;
+  --color-primary-container: #3f51b5;
+  --color-on-primary: #ffffff;
+  --color-secondary: #4a626d;
+  --color-secondary-container: #cde6f4;
+  --color-surface: #f7f9fc;
+  --color-surface-container-low: #f2f4f7;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-high: #e6e8eb;
+  --color-on-surface: #191c1e;
+  --color-on-surface-variant: #454652;
+  --color-outline: #757684;
+  --color-outline-variant: #c5c5d4;
+  --color-error: #ba1a1a;
+  --color-primary-fixed: #dee0ff;
+}
+
+/* ─────────────────────────────────────────
+   Typography
+───────────────────────────────────────── */
+body {
+  font-family: var(--font-inter, Inter, system-ui, sans-serif);
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+}
+
+.font-manrope {
+  font-family: var(--font-manrope, Manrope, system-ui, sans-serif);
+}
+
+.font-inter {
+  font-family: var(--font-inter, Inter, system-ui, sans-serif);
+}
+
+/* ─────────────────────────────────────────
+   Glassmorphism Utility
+───────────────────────────────────────── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* ─────────────────────────────────────────
+   Auth Page Background
+───────────────────────────────────────── */
+.auth-bg {
+  background-color: var(--color-surface);
+}

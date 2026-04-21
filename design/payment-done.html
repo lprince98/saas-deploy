@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>결제 완료 - The Digital Curator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, .font-headline {
+            font-family: 'Manrope', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-surface": "#2d3133",
+                      "secondary-fixed-dim": "#b1cad7",
+                      "inverse-on-surface": "#eff1f4",
+                      "surface-bright": "#f7f9fc",
+                      "inverse-primary": "#bac3ff",
+                      "surface-container-high": "#e6e8eb",
+                      "surface": "#f7f9fc",
+                      "tertiary-fixed": "#ffdcc6",
+                      "outline": "#757684",
+                      "surface-dim": "#d8dadd",
+                      "on-tertiary": "#ffffff",
+                      "tertiary": "#6c3400",
+                      "surface-variant": "#e0e3e6",
+                      "on-error-container": "#93000a",
+                      "secondary-container": "#cde6f4",
+                      "primary-container": "#3f51b5",
+                      "tertiary-container": "#8f4700",
+                      "primary-fixed-dim": "#bac3ff",
+                      "on-secondary-container": "#506873",
+                      "on-surface-variant": "#454652",
+                      "on-secondary": "#ffffff",
+                      "surface-container": "#eceef1",
+                      "surface-container-lowest": "#ffffff",
+                      "outline-variant": "#c5c5d4",
+                      "error": "#ba1a1a",
+                      "primary": "#24389c",
+                      "secondary": "#4a626d",
+                      "surface-tint": "#4355b9",
+                      "background": "#f7f9fc",
+                      "on-surface": "#191c1e",
+                      "on-primary-fixed": "#00105c",
+                      "tertiary-fixed-dim": "#ffb784",
+                      "on-error": "#ffffff",
+                      "on-tertiary-fixed-variant": "#713700",
+                      "on-primary-fixed-variant": "#293ca0",
+                      "on-tertiary-fixed": "#301400",
+                      "on-background": "#191c1e",
+                      "on-secondary-fixed-variant": "#334a55",
+                      "on-primary": "#ffffff",
+                      "surface-container-low": "#f2f4f7",
+                      "on-secondary-fixed": "#051e28",
+                      "on-primary-container": "#cacfff",
+                      "error-container": "#ffdad6",
+                      "surface-container-highest": "#e0e3e6",
+                      "primary-fixed": "#dee0ff",
+                      "on-tertiary-container": "#ffc7a2",
+                      "secondary-fixed": "#cde6f4"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Manrope"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface min-h-screen selection:bg-primary-container selection:text-on-primary-container">
+<!-- Success Shell Container -->
+<main class="relative min-h-screen flex items-center justify-center p-6 md:p-12 overflow-hidden">
+<!-- Background Decor: Tonal Depth instead of lines -->
+<div class="absolute inset-0 z-0">
+<div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-primary/5 blur-[120px]"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-secondary/10 blur-[120px]"></div>
+</div>
+<div class="relative z-10 w-full max-w-5xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Side: Welcome Message (High Contrast Scale) -->
+<div class="lg:col-span-7 space-y-8 pt-12">
+<div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-secondary-container text-on-secondary-container font-medium text-sm">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                결제가 완료되었습니다
+            </div>
+<h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter leading-[1.1] text-primary">
+                이너 서클에 <br/>오신 것을 환영합니다.
+            </h1>
+<p class="text-xl text-on-surface-variant max-w-lg font-body leading-relaxed">
+<span class="text-primary font-semibold">프로 큐레이터</span>로의 업그레이드가 완료되었습니다. 세련된 명확함과 집중력 있는 환경에서 생각을 정리해 보세요.
+            </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="px-8 py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-lg font-semibold text-lg transition-all duration-300 hover:opacity-90 active:scale-95 flex items-center gap-2">
+                    대시보드로 이동
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="px-8 py-4 bg-surface-container-high text-on-secondary-container rounded-lg font-semibold text-lg transition-all duration-300 hover:bg-surface-container-highest">
+                    리소스 보기
+                </button>
+</div>
+<!-- Bento-style mini features -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-12">
+<div class="p-6 rounded-xl bg-surface-container-low transition-colors hover:bg-surface-container-lowest group">
+<span class="material-symbols-outlined text-primary mb-3 text-3xl">auto_awesome</span>
+<h3 class="font-headline font-bold text-lg mb-1">AI 큐레이션</h3>
+<p class="text-sm text-on-surface-variant">큐레이터 엔진이 노트를 자동으로 태그하고 연결해 드립니다.</p>
+</div>
+<div class="p-6 rounded-xl bg-surface-container-low transition-colors hover:bg-surface-container-lowest group">
+<span class="material-symbols-outlined text-primary mb-3 text-3xl">cloud_done</span>
+<h3 class="font-headline font-bold text-lg mb-1">무제한 동기화</h3>
+<p class="text-sm text-on-surface-variant">종단간 암호화 기술로 모든 기기에서 디지털 보관함에 접속하세요.</p>
+</div>
+</div>
+</div>
+<!-- Right Side: Invoice Summary (Glassmorphism & Layered Surface) -->
+<aside class="lg:col-span-5">
+<div class="glass-panel rounded-2xl p-8 border border-outline-variant/15 shadow-2xl shadow-primary/5">
+<div class="flex justify-between items-center mb-8">
+<h2 class="text-xl font-bold font-headline tracking-tight text-on-surface">영수증 요약</h2>
+<span class="text-xs font-mono text-outline uppercase tracking-widest">INV-2024-8842</span>
+</div>
+<!-- Receipt Details -->
+<div class="space-y-6">
+<div class="flex items-center gap-4 p-4 rounded-xl bg-surface-container-low">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined">workspace_premium</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">프로 큐레이터 플랜</p>
+<p class="text-xs text-on-surface-variant">연간 구독</p>
+</div>
+<div class="ml-auto font-bold text-on-surface">
+                            $144.00
+                        </div>
+</div>
+<div class="space-y-3 px-1">
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">소계</span>
+<span class="text-on-surface font-medium">$144.00</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">세금 (0%)</span>
+<span class="text-on-surface font-medium">$0.00</span>
+</div>
+<div class="pt-3 flex justify-between items-center border-t border-dashed border-outline-variant/30">
+<span class="font-headline font-bold text-lg">총 결제 금액</span>
+<span class="font-headline font-extrabold text-2xl text-primary">$144.00</span>
+</div>
+</div>
+<!-- Card Used Detail -->
+<div class="mt-8 p-4 rounded-xl bg-surface-container-highest/50 flex items-center gap-4">
+<div class="p-2 bg-surface-container-lowest rounded-md">
+<span class="material-symbols-outlined text-secondary">credit_card</span>
+</div>
+<div class="text-sm">
+<p class="text-on-surface-variant">결제 수단</p>
+<p class="font-medium text-on-surface">Visa (끝자리 4242)</p>
+</div>
+</div>
+<!-- Action Link -->
+<button class="w-full py-3 text-primary font-semibold text-sm flex items-center justify-center gap-2 hover:underline">
+<span class="material-symbols-outlined text-sm">download</span>
+                        PDF 영수증 다운로드
+                    </button>
+</div>
+<!-- Social Proof / Trust -->
+<div class="mt-12 pt-8 border-t border-outline-variant/10 text-center">
+<img alt="The Digital Curator Logo" class="h-8 mx-auto mb-4 opacity-40 grayscale" data-alt="minimalist professional tech logo of a stylized fountain pen nib incorporating a digital pixel pattern clean indigo lines on white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKASEtisdrFqGvzySb0OReIKBXHhPYLkKEN0fjznGwtyRx-MUkhHCiyOVBqrj5HIPCDPwYY7HEFYX1Tx76LvQ5n-S35wppVnE_9cr3Zq_7EXmMrCfd00O9R1V42WAvsbrakRO5xQ5r7-i4TSSpBHtETgfMG_iiUn8DoSbziM8oHDGWK3wtJcXEibTd0nqiflLt_h4SHTowtBhKVrn98yAZGX2vl7vfIey8cIaiDO4Ho0tYoGZQQPuR10UCNBGIRjW9Y-wc0M6cLQ"/>
+<p class="text-[10px] text-outline uppercase tracking-[0.2em] font-bold">50,000명 이상의 큐레이터가 선택했습니다</p>
+</div>
+</div>
+<!-- Support Card -->
+<div class="mt-6 p-6 rounded-2xl bg-secondary-fixed text-on-secondary-fixed flex items-center gap-5">
+<span class="material-symbols-outlined text-3xl">help_center</span>
+<div>
+<p class="font-bold font-headline">도움이 필요하신가요?</p>
+<p class="text-sm opacity-80">프로 회원을 위해 전담 컨시어지가 24시간 대기 중입니다.</p>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Visual Anchor: Floating decorative image (Editorial style) -->
+<div class="fixed bottom-0 right-0 -z-10 w-1/3 opacity-20 pointer-events-none">
+<img alt="Decorative background" class="w-full h-auto" data-alt="abstract architectural composition with smooth white curves and deep indigo shadows minimalist sophisticated editorial photography style lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKHljmchTPV8PHsXJe44t0jPXYApn0kj8Y1n8wYjqssgWewlHvMYwEmLVqho9hOmQM1kJPYOvsBciroZfVzoTJ9wwrpH5t2z4y-wg7VpfXktx2vS71LmauQc0AZwWiuZroxqdoM63oxq5SL1XSW98RDIkVYA0kJn1pF_kby03iUxIFoLRUsaEowo-CT4AVopHx1KXeAhd14m_2H46UMMXHoyd47KtQpU9G7lCi8g2tV111gL4D7kv0fvXUvxiTPnsk46bpQoKXkw"/>
+</div>
+</body></html>

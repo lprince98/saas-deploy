@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>디지털 큐레이터 | 대시보드</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-surface": "#2d3133",
+                      "secondary-fixed-dim": "#b1cad7",
+                      "inverse-on-surface": "#eff1f4",
+                      "surface-bright": "#f7f9fc",
+                      "inverse-primary": "#bac3ff",
+                      "surface-container-high": "#e6e8eb",
+                      "surface": "#f7f9fc",
+                      "tertiary-fixed": "#ffdcc6",
+                      "outline": "#757684",
+                      "surface-dim": "#d8dadd",
+                      "on-tertiary": "#ffffff",
+                      "tertiary": "#6c3400",
+                      "surface-variant": "#e0e3e6",
+                      "on-error-container": "#93000a",
+                      "secondary-container": "#cde6f4",
+                      "primary-container": "#3f51b5",
+                      "tertiary-container": "#8f4700",
+                      "primary-fixed-dim": "#bac3ff",
+                      "on-secondary-container": "#506873",
+                      "on-surface-variant": "#454652",
+                      "on-secondary": "#ffffff",
+                      "surface-container": "#eceef1",
+                      "surface-container-lowest": "#ffffff",
+                      "outline-variant": "#c5c5d4",
+                      "error": "#ba1a1a",
+                      "primary": "#24389c",
+                      "secondary": "#4a626d",
+                      "surface-tint": "#4355b9",
+                      "background": "#f7f9fc",
+                      "on-surface": "#191c1e",
+                      "on-primary-fixed": "#00105c",
+                      "tertiary-fixed-dim": "#ffb784",
+                      "on-error": "#ffffff",
+                      "on-tertiary-fixed-variant": "#713700",
+                      "on-primary-fixed-variant": "#293ca0",
+                      "on-tertiary-fixed": "#301400",
+                      "on-background": "#191c1e",
+                      "on-secondary-fixed-variant": "#334a55",
+                      "on-primary": "#ffffff",
+                      "surface-container-low": "#f2f4f7",
+                      "on-secondary-fixed": "#051e28",
+                      "on-primary-container": "#cacfff",
+                      "error-container": "#ffdad6",
+                      "surface-container-highest": "#e0e3e6",
+                      "primary-fixed": "#dee0ff",
+                      "on-tertiary-container": "#ffc7a2",
+                      "secondary-fixed": "#cde6f4"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Manrope", "sans-serif"],
+                      "body": ["Inter", "sans-serif"],
+                      "label": ["Inter", "sans-serif"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-panel {
+            background: rgba(247, 249, 252, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased overflow-hidden">
+<div class="flex h-screen overflow-hidden">
+<!-- SideNavBar Shared Component -->
+<aside class="h-screen w-64 bg-slate-100 flex flex-col p-4 space-y-2 font-inter text-sm font-medium">
+<div class="mb-8 px-4 flex flex-col">
+<span class="text-lg font-bold text-indigo-950 font-headline">나의 갤러리</span>
+<span class="text-xs text-secondary opacity-70">개인 작업 공간</span>
+</div>
+<!-- Main Tabs -->
+<nav class="flex-1 space-y-1">
+<!-- All Notes Active -->
+<a class="flex items-center gap-3 px-4 py-2.5 bg-white text-indigo-700 rounded-lg shadow-sm font-semibold transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+                    모든 노트
+                </a>
+<a class="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:bg-slate-200 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="star">star</span>
+                    즐겨찾기
+                </a>
+<a class="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:bg-slate-200 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="folder">folder</span>
+                    노트북
+                </a>
+<a class="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:bg-slate-200 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+                    공유됨
+                </a>
+<a class="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:bg-slate-200 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+                    휴지통
+                </a>
+</nav>
+<!-- CTA -->
+<button class="w-full mt-auto mb-6 bg-gradient-to-br from-primary to-primary-container text-white py-3 rounded-lg font-semibold shadow-lg shadow-primary/20 flex items-center justify-center gap-2 transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                새 노트
+            </button>
+<!-- Footer Tabs -->
+<div class="border-t border-outline-variant/10 pt-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-2 text-slate-500 hover:bg-slate-200 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                    설정
+                </a>
+<a class="flex items-center gap-3 px-4 py-2 text-slate-500 hover:bg-slate-200 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+                    도움말
+                </a>
+</div>
+<div class="flex items-center gap-3 px-4 mt-6">
+<img alt="사용자 프로필" class="w-8 h-8 rounded-full object-cover" data-alt="professional portrait of a creative professional in soft natural lighting with a blurred office background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLifsZZEYHX9SGTtQLxM8lyyeEJV4SvwUZM8lcycQJaDicXNDOaAGf5NcVA11LIKHBJI-T_Ewc09BbdpVyyEYvVNFyTQOOd4-i4J4C2GUWOwoc2eLAFsMNMiQyaSrrHQRIpIdXkqa9ZNxMN0g7SR8Ih0Bu2n1H05FPf5NTXj77Z_e5337uqB4k0pP-OBQ7FTO46FWKydclOKSh7ICyczcJAtxgRtE-VubEVWx5F9uqlT_ww5klJD5C9zalKXkwCbPhjsm9NADo0w"/>
+<div class="flex flex-col">
+<span class="text-xs font-semibold text-on-surface">알렉스 큐레이터</span>
+<span class="text-[10px] text-secondary">프리미엄 플랜</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col overflow-y-auto">
+<!-- Top Header Area (Search) -->
+<header class="sticky top-0 z-10 glass-panel px-12 py-6 flex items-center justify-between">
+<div class="flex-1 max-w-2xl">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors" data-icon="search">search</span>
+<input class="w-full bg-surface-container-lowest border-none rounded-full pl-12 pr-4 py-3 text-on-surface placeholder:text-outline/50 focus:ring-2 focus:ring-primary/20 transition-all outline-none" placeholder="아카이브 검색..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6 ml-8">
+<button class="relative p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="h-8 w-[1px] bg-outline-variant/30"></div>
+<h1 class="font-headline font-extrabold text-2xl tracking-tighter text-indigo-900">The Digital Curator</h1>
+</div>
+</header>
+<div class="px-12 py-8 space-y-12">
+<!-- Welcome Section -->
+<section>
+<h2 class="font-headline text-5xl font-extrabold text-on-surface tracking-tight mb-2">좋은 아침입니다, 알렉스님.</h2>
+<p class="text-secondary font-body text-lg">오늘을 위해 큐레이션된 생각들이 검토를 기다리고 있습니다.</p>
+</section>
+<!-- Featured / Pinned Grid (Bento) -->
+<section class="grid grid-cols-12 gap-6">
+<!-- Large Primary Note -->
+<div class="col-span-12 lg:col-span-7 bg-surface-container-low rounded-xl p-8 hover:bg-surface-container-lowest transition-all duration-300 group cursor-pointer flex flex-col">
+<div class="flex items-center justify-between mb-6">
+<span class="px-4 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-semibold">전략적 비전</span>
+<span class="text-xs text-outline">2시간 전 수정됨</span>
+</div>
+<h3 class="font-headline text-3xl font-bold text-on-surface mb-4 leading-tight">분기별 디자인 철학: 노-라인 규칙 및 감성 인터페이스</h3>
+<p class="text-on-surface-variant line-clamp-3 mb-8 text-lg">현대 UI에서 물리적 공간과 톤의 변화가 어떻게 구조적 프레임워크를 대체할 수 있는지 탐구합니다. 고대비 스케일과 시선의 흐름에 집중해야 합니다...</p>
+<div class="mt-auto flex items-center gap-4">
+<div class="flex -space-x-2">
+<img alt="동료" class="w-8 h-8 rounded-full border-2 border-surface" data-alt="close up of a person smiling with vibrant background colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVEiaE1WJJykFt-54CcUdWcMTb4Gfrtm6D-tofEXHNsVOogRZDwAsSh4VTknPYqhV3QCfm0M8GJmVuzlJdb_ExIXnQVhzccBDhIgAB71CpM1-G4-ZLuAi0JN61Tc1uVhqYrurBBtI_2DajIIn60-iUSvIbtyphED-ZWk0x5xVv5DiMQafFElXZR_Kly35Mq7kcD4-G2elq-ITbBm8D_AtqxRRv2HZGOqbh7SSmtpuTH6PVzgG8sBR2DeIzMz5duTIJoV6zhngN5g"/>
+<img alt="동료" class="w-8 h-8 rounded-full border-2 border-surface" data-alt="woman in minimalist professional attire against soft grey background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAc8iujd05Kp10zshaqx0GkoRBNzCNFgoYpcDctFXbLqvve37fYblI0iTYSQIbjMFC1LCXt9X7SdZobUSbSmY-i2QtYrNzEccbsmUsXZA-re0n1JygqsdSrO5WULvDddfdqqquQO-Y6jX6AyoG3q56wq8r2T02IdEalKd1iFZmVgSxJ3ZW_miuzf56ti4KEZjypBoDXobPae9Huv1bMq1aqOEjOy0CHqD_pPRPrartptjMbdCBPJyVZ9bkSE2mypKmHCjQIrAGqAg"/>
+</div>
+<span class="text-xs text-secondary">외 2명에게 공유됨</span>
+</div>
+</div>
+<!-- Secondary Bento Card -->
+<div class="col-span-12 lg:col-span-5 bg-surface-container-low rounded-xl p-8 hover:bg-surface-container-lowest transition-all duration-300 group cursor-pointer">
+<div class="flex items-center justify-between mb-6">
+<span class="px-4 py-1 bg-tertiary-container text-on-tertiary-container rounded-full text-xs font-semibold">영감</span>
+<span class="material-symbols-outlined text-outline" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<div class="rounded-lg overflow-hidden mb-6 h-40">
+<img alt="영감" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="architectural shot of a modern minimalist staircase with strong shadows and geometric lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR-nu07UasWg3TuMw4RLiKLFirn97vt78Cgs8UoE8cNMMwOgeGMBUICv4mTxTUP8R9Kb_qiSPkq_2quEagnuBSiPvNYVN57Um7KPinKvbQQ9xeL_ylp4RKiztvO4sKCeMomgrwgV_jYHayB8uXKaiSXm4UYQjnSUTiXSBGzT71jC5ylQYL_FF-DDoIC8H7xVBVeP5eZfPLCzxe-hMwwvC_CgRxicz9-UHZPnM3y2-yq5sVnz2irU2x61nbodqNFHUDWzNnw6cJcQ"/>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface mb-2">베를린의 모더니즘</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2">지난 주말 건축 투어의 시각적 기록. 여백의 미를 주목할 것.</p>
+</div>
+<!-- Row 2 -->
+<div class="col-span-12 lg:col-span-4 bg-surface-container-low rounded-xl p-8 hover:bg-surface-container-lowest transition-all duration-300 group cursor-pointer border-t-4 border-primary">
+<h4 class="font-headline font-bold text-lg mb-2">제품 출시 체크리스트</h4>
+<div class="space-y-3 mt-4">
+<div class="flex items-center gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span>
+<span class="line-through opacity-50">브랜드 앵커 확정</span>
+</div>
+<div class="flex items-center gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="radio_button_unchecked">radio_button_unchecked</span>
+<span>글래스모피즘 레이어 개선</span>
+</div>
+<div class="flex items-center gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="radio_button_unchecked">radio_button_unchecked</span>
+<span>편집 경로 계층 구조 검토</span>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-8 bg-surface-container-low rounded-xl p-8 hover:bg-surface-container-lowest transition-all duration-300 group cursor-pointer relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary" data-icon="lightbulb">lightbulb</span>
+<span class="text-xs font-bold uppercase tracking-widest text-primary">오늘의 통찰</span>
+</div>
+<p class="font-headline text-2xl font-semibold text-indigo-900 max-w-lg">"정보는 지식이 아닙니다. 지식의 유일한 원천은 경험입니다. 경험은 큐레이션된 기억입니다."</p>
+<p class="mt-4 text-secondary text-sm">— 에디토리얼 다이제스트, 2024년 6월</p>
+</div>
+</div>
+</section>
+<!-- Recent Notes List -->
+<section>
+<div class="flex items-center justify-between mb-8">
+<h3 class="font-headline text-2xl font-bold">최근 큐레이션</h3>
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-surface-container-high rounded-lg transition-colors">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+</button>
+<button class="p-2 bg-surface-container-high text-primary rounded-lg transition-colors">
+<span class="material-symbols-outlined" data-icon="list">list</span>
+</button>
+</div>
+</div>
+<div class="space-y-4">
+<!-- Note Item -->
+<div class="flex items-center p-6 bg-surface-container-low hover:bg-surface-container-lowest rounded-xl transition-all group cursor-pointer">
+<div class="w-12 h-12 bg-secondary-container text-on-secondary-container flex items-center justify-center rounded-lg mr-6">
+<span class="material-symbols-outlined" data-icon="article">article</span>
+</div>
+<div class="flex-1">
+<h4 class="font-semibold text-on-surface group-hover:text-primary transition-colors">주간 싱크 노트</h4>
+<p class="text-sm text-secondary line-clamp-1">모든 플랫폼에 슬레이트 인디고 팔레트를 적용하기로 결정함.</p>
+</div>
+<div class="flex items-center gap-8 text-sm text-outline">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="folder">folder</span>
+<span>제품 팀</span>
+</div>
+<span class="w-24 text-right">어제</span>
+</div>
+</div>
+<!-- Note Item -->
+<div class="flex items-center p-6 bg-surface-container-low hover:bg-surface-container-lowest rounded-xl transition-all group cursor-pointer">
+<div class="w-12 h-12 bg-surface-container-high text-outline flex items-center justify-center rounded-lg mr-6">
+<span class="material-symbols-outlined" data-icon="mic">mic</span>
+</div>
+<div class="flex-1">
+<h4 class="font-semibold text-on-surface group-hover:text-primary transition-colors">음성 메모: 팟캐스트 게스트 아이디어</h4>
+<p class="text-sm text-secondary line-clamp-1">내용: 미니멀리스트와 디지털 아카이브 전문가에 집중. 현대미술관(MoMA)에 연락해볼 것.</p>
+</div>
+<div class="flex items-center gap-8 text-sm text-outline">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="folder">folder</span>
+<span>아이디어</span>
+</div>
+<span class="w-24 text-right">6월 12일</span>
+</div>
+</div>
+<!-- Note Item -->
+<div class="flex items-center p-6 bg-surface-container-low hover:bg-surface-container-lowest rounded-xl transition-all group cursor-pointer">
+<div class="w-12 h-12 bg-tertiary-container/30 text-tertiary flex items-center justify-center rounded-lg mr-6">
+<span class="material-symbols-outlined" data-icon="image">image</span>
+</div>
+<div class="flex-1">
+<h4 class="font-semibold text-on-surface group-hover:text-primary transition-colors">무드보드: 인더스트리얼 젠</h4>
+<p class="text-sm text-secondary line-clamp-1">새로운 물리적 작업 공간 레이아웃을 위한 이미지 참조 및 자재 연구.</p>
+</div>
+<div class="flex items-center gap-8 text-sm text-outline">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="folder">folder</span>
+<span>작업 공간</span>
+</div>
+<span class="w-24 text-right">6월 10일</span>
+</div>
+</div>
+</div>
+<div class="mt-12 flex justify-center">
+<button class="text-primary font-semibold text-sm hover:underline underline-offset-4">모든 노트 및 아카이브 보기</button>
+</div>
+</section>
+</div>
+<!-- Footer Spacing -->
+<div class="h-24"></div>
+</main>
+</div>
+</body></html>

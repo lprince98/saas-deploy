@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Digital Curator - 로그인</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#2d3133",
+                    "secondary-fixed-dim": "#b1cad7",
+                    "inverse-on-surface": "#eff1f4",
+                    "surface-bright": "#f7f9fc",
+                    "inverse-primary": "#bac3ff",
+                    "surface-container-high": "#e6e8eb",
+                    "surface": "#f7f9fc",
+                    "tertiary-fixed": "#ffdcc6",
+                    "outline": "#757684",
+                    "surface-dim": "#d8dadd",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#6c3400",
+                    "surface-variant": "#e0e3e6",
+                    "on-error-container": "#93000a",
+                    "secondary-container": "#cde6f4",
+                    "primary-container": "#3f51b5",
+                    "tertiary-container": "#8f4700",
+                    "primary-fixed-dim": "#bac3ff",
+                    "on-secondary-container": "#506873",
+                    "on-surface-variant": "#454652",
+                    "on-secondary": "#ffffff",
+                    "surface-container": "#eceef1",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#c5c5d4",
+                    "error": "#ba1a1a",
+                    "primary": "#24389c",
+                    "secondary": "#4a626d",
+                    "surface-tint": "#4355b9",
+                    "background": "#f7f9fc",
+                    "on-surface": "#191c1e",
+                    "on-primary-fixed": "#00105c",
+                    "tertiary-fixed-dim": "#ffb784",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed-variant": "#713700",
+                    "on-primary-fixed-variant": "#293ca0",
+                    "on-tertiary-fixed": "#301400",
+                    "on-background": "#191c1e",
+                    "on-secondary-fixed-variant": "#334a55",
+                    "on-primary": "#ffffff",
+                    "surface-container-low": "#f2f4f7",
+                    "on-secondary-fixed": "#051e28",
+                    "on-primary-container": "#cacfff",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#e0e3e6",
+                    "primary-fixed": "#dee0ff",
+                    "on-tertiary-container": "#ffc7a2",
+                    "secondary-fixed": "#cde6f4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen flex items-center justify-center p-6 relative overflow-hidden">
+<!-- Background Decorative Elements -->
+<div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+<div class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] rounded-full bg-primary-fixed opacity-20 blur-[120px]"></div>
+<div class="absolute top-[60%] -right-[5%] w-[35%] h-[35%] rounded-full bg-secondary-container opacity-30 blur-[100px]"></div>
+</div>
+<!-- Main Entry Container -->
+<main class="relative z-10 w-full max-w-md">
+<!-- Brand Identity Header -->
+<div class="text-center mb-8">
+<div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary-container mb-4 shadow-lg">
+<span class="material-symbols-outlined text-on-primary text-2xl" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<h1 class="font-headline text-3xl font-extrabold tracking-tighter text-on-surface mb-1">The Digital Curator</h1>
+<p class="text-secondary font-medium text-sm">의도적인 생각의 정리.</p>
+</div>
+<!-- Auth Card -->
+<div class="glass-card rounded-xl p-8 shadow-sm border border-outline-variant/10">
+<!-- Context Switcher (Tabs) -->
+<div class="flex items-center space-x-1 bg-surface-container-low p-1 rounded-lg mb-8">
+<button class="flex-1 py-2 text-sm font-semibold rounded-md transition-all duration-200 bg-white shadow-sm text-primary">로그인</button>
+<button class="flex-1 py-2 text-sm font-medium rounded-md transition-all duration-200 text-secondary hover:text-primary">회원가입</button>
+</div>
+<div class="space-y-6">
+<!-- Social Login Cluster -->
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center justify-center space-x-2 py-3 px-4 rounded-lg bg-surface-container-lowest border border-outline-variant/20 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="google" style="color: #4285F4;">google</span>
+<span class="text-sm font-medium text-on-surface">Google</span>
+</button>
+<button class="flex items-center justify-center space-x-2 py-3 px-4 rounded-lg bg-surface-container-lowest border border-outline-variant/20 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="apple" style="color: #000000;">ios</span>
+<span class="text-sm font-medium text-on-surface">Apple</span>
+</button>
+</div>
+<div class="flex items-center my-6">
+<div class="flex-grow h-px bg-outline-variant/30"></div>
+<span class="px-4 text-[10px] uppercase tracking-widest font-bold text-outline">또는 이메일</span>
+<div class="flex-grow h-px bg-outline-variant/30"></div>
+</div>
+<!-- Form Fields -->
+<form class="space-y-4">
+<div class="space-y-1.5">
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider px-1" for="email">이메일 주소</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg" data-icon="alternate_email">alternate_email</span>
+<input class="w-full pl-10 pr-4 py-3 bg-surface-container-low border-0 rounded-lg text-sm focus:ring-2 focus:ring-primary/20 focus:bg-surface transition-all placeholder:text-outline/50 text-on-surface" id="email" placeholder="curator@example.com" type="email"/>
+</div>
+</div>
+<div class="space-y-1.5">
+<div class="flex justify-between items-end">
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider px-1" for="password">비밀번호</label>
+<a class="text-[11px] font-semibold text-primary hover:underline" href="#">분실하셨나요?</a>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg" data-icon="lock">lock</span>
+<input class="w-full pl-10 pr-4 py-3 bg-surface-container-low border-0 rounded-lg text-sm focus:ring-2 focus:ring-primary/20 focus:bg-surface transition-all placeholder:text-outline/50 text-on-surface" id="password" placeholder="••••••••" type="password"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-outline" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<div class="pt-4">
+<button class="w-full py-4 bg-gradient-to-r from-primary to-primary-container text-on-primary font-bold rounded-lg shadow-md hover:opacity-90 active:scale-[0.98] transition-all duration-300" type="submit">
+                            갤러리로 계속하기
+                        </button>
+</div>
+</form>
+</div>
+<!-- Tonal Footer -->
+<div class="mt-8 text-center">
+<p class="text-xs text-secondary leading-relaxed px-4">
+                    계속 진행함으로써 본 서비스의 
+                    <a class="text-on-surface font-semibold hover:text-primary transition-colors" href="#">이용약관</a> 
+                    및 
+                    <a class="text-on-surface font-semibold hover:text-primary transition-colors" href="#">개인정보 처리방침</a>에 동의하게 됩니다.
+                </p>
+</div>
+</div>
+<!-- Footnote / Help link -->
+<div class="mt-8 flex justify-center space-x-6">
+<a class="flex items-center space-x-1.5 text-secondary hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-base group-hover:rotate-12 transition-transform" data-icon="help_outline">help_outline</span>
+<span class="text-xs font-medium">도움이 필요하신가요?</span>
+</a>
+<a class="flex items-center space-x-1.5 text-secondary hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-base" data-icon="language">language</span>
+<span class="text-xs font-medium">한국어</span>
+</a>
+</div>
+</main>
+<!-- Content Previews (Visual Context) -->
+<div class="hidden lg:block absolute bottom-12 left-12 w-64 h-80 rounded-2xl overflow-hidden shadow-2xl rotate-[-3deg] z-0 grayscale-[0.5] hover:grayscale-0 transition-all duration-500 border-4 border-white">
+<img alt="Preview 1" class="w-full h-full object-cover" data-alt="monochrome minimalist office desk with a single notebook and a fountain pen in soft morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4ZqBIyYMdKKomnLbjKQprKuacelgJ95KN7XMiznLmsZGoz4x37lsfIdhN__VMni32OFF_IPehH62wcDMHpiRNOG4j22qhMu4YXpyRPZLqUey5HHRRxcfgpn-8RSFtH7AjjJPcUVUZHBkoDHg9nUC2KC7HWFpzefKsAVJJHdxc6i5GMoiJckEEftFDxJkcbzAiVP1pFzS87r12Pyw5virkAhzL1KOMkIGuhhsEkd7TFaw1D4E67hxIHIVOAmAKjbkGRftcr-VIkQ"/>
+</div>
+<div class="hidden lg:block absolute top-12 right-12 w-72 h-48 rounded-2xl overflow-hidden shadow-2xl rotate-[5deg] z-0 grayscale-[0.3] hover:grayscale-0 transition-all duration-500 border-4 border-white">
+<img alt="Preview 2" class="w-full h-full object-cover" data-alt="architectural detail of a clean white museum hallway with sharp shadows and geometric lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD13ERixAqdtD_t4THJndbLBYTbw-_eyssupXFZu5uRsi7KVAmwTkuV3PaGCmslwbJEhQxHd2YAaoF2ma2-8AHkoDwi0O27eBjj3nnjf0PouM4zK6jiDLE2rLStSLKErMeEx1rsXxI3WGaWowrxW1G2GkadNFYqXGQyRNqJrWh4KNCFXojQovZvW4sQPhPzSjsPsVjNmeYWfMe7vj0zgdK7CfysZDwPt6BZDdaPWHy3ktlvoSvBk-TwxPl7nc9N2F2Mf9VTM3Hu6Q"/>
+</div>
+</body></html>
