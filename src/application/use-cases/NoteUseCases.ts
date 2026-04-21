@@ -39,14 +39,30 @@ export class NoteUseCases {
   async updateNote(props: NoteProps): Promise<Note> {
     if (!props.id) throw new Error('Note ID is required for update')
     
-    // 수정 시에는 별도의 개수 제한을 두지 않으나 
-    // 추후 필요 시 여기에 로직 추가 가능
+    // 권한 체크 (Defense in Depth)
+    const existingNote = await this.noteRepository.findById(props.id)
+    if (!existingNote) {
+      throw new Error('노트를 찾을 수 없습니다.')
+    }
+    
+    if (existingNote.ownerId !== props.userId) {
+      throw new Error('이 노트를 수정할 권한이 없습니다.')
+    }
     
     const note = new Note(props)
     return this.noteRepository.save(note)
   }
 
-  async deleteNote(id: string): Promise<void> {
+  async deleteNote(id: string, userId: string): Promise<void> {
+    const existingNote = await this.noteRepository.findById(id)
+    if (!existingNote) {
+      throw new Error('노트를 찾을 수 없습니다.')
+    }
+    
+    if (existingNote.ownerId !== userId) {
+      throw new Error('이 노트를 삭제할 권한이 없습니다.')
+    }
+
     return this.noteRepository.delete(id)
   }
 }

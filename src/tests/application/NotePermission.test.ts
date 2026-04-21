@@ -82,4 +82,34 @@ describe('NoteUseCases - Permission Control', () => {
     expect(result).toBeDefined()
     expect(mockNoteRepo.save).toHaveBeenCalled()
   })
+
+  it('타인의 노트를 수정하려 할 때 에러가 발생해야 한다', async () => {
+    const ownerId = 'user-owner'
+    const attackerId = 'user-attacker'
+    
+    vi.mocked(mockNoteRepo.findById).mockResolvedValue({ 
+      id: 'note-1', 
+      ownerId: ownerId 
+    } as any)
+
+    await expect(noteUseCases.updateNote({
+      id: 'note-1',
+      userId: attackerId,
+      title: 'Hacked Title',
+      content: {}
+    })).rejects.toThrow('이 노트를 수정할 권한이 없습니다.')
+  })
+
+  it('타인의 노트를 삭제하려 할 때 에러가 발생해야 한다', async () => {
+    const ownerId = 'user-owner'
+    const attackerId = 'user-attacker'
+    
+    vi.mocked(mockNoteRepo.findById).mockResolvedValue({ 
+      id: 'note-1', 
+      ownerId: ownerId 
+    } as any)
+
+    await expect(noteUseCases.deleteNote('note-1', attackerId))
+      .rejects.toThrow('이 노트를 삭제할 권한이 없습니다.')
+  })
 })

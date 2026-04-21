@@ -1,6 +1,8 @@
 'use server'
 
 import { createSupabaseServerClient } from '@/src/infrastructure/database/supabase-server'
+import { SupabasePaymentLogRepository } from '@/src/infrastructure/repositories/SupabasePaymentLogRepository'
+
 
 const TOSS_SECRET_KEY = process.env.TOSS_SECRET_KEY || "test_sk_XjExPeJWYVQR12P55agr49R5gvNL";
 
@@ -18,6 +20,22 @@ export async function completePurchaseAction(authKey: string, customerKey: strin
   }
 
   const userId = user.id
+  
+  // 1-1. DB에서 결제 로그 조회 및 검증 (보안 강화: 클라이언트 amount 변조 방지)
+  const logRepository = new SupabasePaymentLogRepository()
+  const paymentLog = await logRepository.findByOrderId(orderId)
+  
+  if (!paymentLog) {
+    throw new Error('유효하지 않은 주문 ID입니다.')
+  }
+  
+  if (paymentLog.userId !== userId) {
+    throw new Error('결제 정보의 소유자가 일치하지 않습니다.')
+  }
+
+  // 실 결제 금액은 클라이언트 파라미터가 아닌 DB에 저장된 값을 사용함
+  const verifiedAmount = paymentLog.amountKrw
+
 
   // 2. 토스페이먼츠 빌링키 발급 API 호출
   const basicAuth = Buffer.from(`${TOSS_SECRET_KEY}:`).toString('base64');
@@ -52,9 +70,9 @@ export async function completePurchaseAction(authKey: string, customerKey: strin
     },
     body: JSON.stringify({
       customerKey,
-      amount,
+      amount: verifiedAmount,
       orderId,
-      orderName: `${planName || 'Pro'} Curator Plan (정기결제)`,
+      orderName: `${paymentLog.planName || 'Pro'} Curator Plan (정기결제)`,
       customerEmail: user.email, 
       taxFreeAmount: 0 // 면세 금액
     }),
@@ -78,10 +96,10 @@ export async function completePurchaseAction(authKey: string, customerKey: strin
     .from('subscriptions')
     .upsert({
       user_id: userId,
-      plan: 'pro',
+      plan: (paymentLog.planName.toLowerCase().includes('enterprise') ? 'enterprise' : 'pro') as any,
       status: 'active',
-      billing_cycle: 'monthly', // 정기결제 30일 기준
-      amount_krw: amount,      
+      billing_cycle: 'monthly',
+      amount_krw: verifiedAmount,      
       currency: 'KRW',
       customer_key: customerKey,  // 빌링키 관리를 위한 고객 키
       billing_key: billingKey,    // 빌링키 저장

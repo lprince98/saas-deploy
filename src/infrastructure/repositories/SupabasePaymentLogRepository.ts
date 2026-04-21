@@ -56,6 +56,23 @@ export class SupabasePaymentLogRepository implements PaymentLogRepository {
     return this.mapToDomain(data)
   }
 
+  async findByOrderId(orderId: string): Promise<PaymentLog | null> {
+    const supabase = await createSupabaseServerClient()
+
+    const { data, error } = await supabase
+      .from('payment_logs')
+      .select('*')
+      .eq('order_id', orderId)
+      .maybeSingle()
+
+    if (error) {
+      console.error('Error finding payment log by orderId:', error)
+      return null
+    }
+
+    return data ? this.mapToDomain(data) : null
+  }
+
   private mapToDomain(row: any): PaymentLog {
     return {
       id: row.id,

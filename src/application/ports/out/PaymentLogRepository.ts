@@ -14,4 +14,6 @@ export interface PaymentLogRepository {
     failReason?: string, 
     paymentKey?: string
   ): Promise<PaymentLog>;
+
+  findByOrderId(orderId: string): Promise<PaymentLog | null>;
 }
