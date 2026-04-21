@@ -89,7 +89,7 @@ describe('NoteUseCases - Permission Control', () => {
     
     vi.mocked(mockNoteRepo.findById).mockResolvedValue({ 
       id: 'note-1', 
-      ownerId: ownerId 
+      userId: ownerId 
     } as any)
 
     await expect(noteUseCases.updateNote({
@@ -106,7 +106,7 @@ describe('NoteUseCases - Permission Control', () => {
     
     vi.mocked(mockNoteRepo.findById).mockResolvedValue({ 
       id: 'note-1', 
-      ownerId: ownerId 
+      userId: ownerId 
     } as any)
 
     await expect(noteUseCases.deleteNote('note-1', attackerId))

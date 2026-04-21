@@ -45,7 +45,7 @@ export class NoteUseCases {
       throw new Error('노트를 찾을 수 없습니다.')
     }
     
-    if (existingNote.ownerId !== props.userId) {
+    if (existingNote.userId !== props.userId) {
       throw new Error('이 노트를 수정할 권한이 없습니다.')
     }
     
@@ -59,7 +59,7 @@ export class NoteUseCases {
       throw new Error('노트를 찾을 수 없습니다.')
     }
     
-    if (existingNote.ownerId !== userId) {
+    if (existingNote.userId !== userId) {
       throw new Error('이 노트를 삭제할 권한이 없습니다.')
     }
 
