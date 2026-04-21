@@ -149,7 +149,7 @@ export default async function DashboardPage() {
                 <span className="text-xs font-bold uppercase tracking-widest text-[#cacfff]">오늘의 통찰</span>
               </div>
               <p className="font-headline text-3xl font-semibold text-white max-w-3xl leading-snug tracking-tight">
-                "정보는 지식이 아닙니다. 지식의 유일한 원천은 경험입니다. 경험은 큐레이션된 기억입니다."
+                "정보는 지식이 아닙니다. 지식의 유일한 원천은 경험입니다. 경험은 큐레이션된 기억입니다!!!"
               </p>
               <p className="mt-6 text-[#cacfff] text-base italic font-inter opacity-80">— 에디토리얼 다이제스트, 2024년</p>
            </div>
