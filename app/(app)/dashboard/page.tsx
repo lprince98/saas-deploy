@@ -15,6 +15,17 @@ import { createNoteAction } from '@/src/application/actions/noteActions'
 import { SupabaseUserRepository } from '@/src/infrastructure/repositories/SupabaseUserRepository'
 import { seedNotesAction } from './seed-action'
 import { CancelSubscriptionButton } from '@/src/presentation/components/payment/CancelSubscriptionButton'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: '나의 갤러리 — CloudNote',
+  description: '당신의 사유가 큐레이션되는 공간. 오늘 기록한 영감을 확인하세요.',
+  openGraph: {
+    title: '나의 갤러리 — CloudNote Dashboard',
+    description: '개인적인 성찰과 지적 아카이브',
+    images: ['/og-image.png'],
+  },
+}
 
 /**
  * 대시보드 서버 컴포넌트

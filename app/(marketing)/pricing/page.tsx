@@ -4,6 +4,17 @@ import { IconBox } from '@/src/presentation/components/ui/IconBox'
 import { Container } from '@/src/presentation/components/ui/Container'
 import { Card } from '@/src/presentation/components/ui/Card'
 import { PricingSection } from '@/src/presentation/components/payment/PricingSection'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: '명료함의 가치 — CloudNote 요금제',
+  description: '당신의 지적 유산을 담기 위한 완벽한 플랜을 선택하세요. 무료부터 엔터프라이즈까지.',
+  openGraph: {
+    title: 'CloudNote 요금표 — 명료함의 시작',
+    description: '프리미엄 지식 관리의 새로운 기준',
+    images: ['/og-image.png'],
+  },
+}
 
 /**
  * 요금제 페이지 (서버 컴포넌트)
