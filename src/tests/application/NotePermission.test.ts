@@ -36,10 +36,9 @@ describe('NoteUseCases - Permission Control', () => {
     vi.mocked(mockNoteRepo.save).mockResolvedValue({ id: 'new-note' } as any)
 
     const result = await noteUseCases.createNote({
-      ownerId: userId,
+      userId: userId,
       title: 'Valid Note',
-      note_type: 'article',
-      access: 'private',
+      content: {},
     })
 
     expect(result).toBeDefined()
@@ -56,10 +55,9 @@ describe('NoteUseCases - Permission Control', () => {
     vi.mocked(mockNoteRepo.countByUserId).mockResolvedValue(10)
 
     await expect(noteUseCases.createNote({
-      ownerId: userId,
+      userId: userId,
       title: 'Forbidden Note',
-      note_type: 'article',
-      access: 'private',
+      content: {},
     })).rejects.toThrow(SubscriptionRequiredError)
     
     expect(mockNoteRepo.save).not.toHaveBeenCalled()
@@ -76,10 +74,9 @@ describe('NoteUseCases - Permission Control', () => {
     vi.mocked(mockNoteRepo.save).mockResolvedValue({ id: 'pro-note' } as any)
 
     const result = await noteUseCases.createNote({
-      ownerId: userId,
+      userId: userId,
       title: 'Pro Note',
-      note_type: 'article',
-      access: 'private',
+      content: {},
     })
 
     expect(result).toBeDefined()

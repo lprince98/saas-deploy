@@ -5,7 +5,8 @@ import { Note } from '@/src/domain/entities/Note'
 
 describe('NoteUseCases', () => {
   let noteUseCases: NoteUseCases
-  let mockRepo: NoteRepository
+  let mockRepo: any
+  let mockUserRepo: any
 
   beforeEach(() => {
     mockRepo = {
@@ -13,8 +14,12 @@ describe('NoteUseCases', () => {
       findById: vi.fn(),
       save: vi.fn(),
       delete: vi.fn(),
+      countByUserId: vi.fn(),
     }
-    noteUseCases = new NoteUseCases(mockRepo)
+    mockUserRepo = {
+      getUserSubscription: vi.fn().mockResolvedValue({ plan: 'pro', status: 'active' })
+    }
+    noteUseCases = new NoteUseCases(mockRepo, mockUserRepo)
   })
 
   it('should get notes for a user', async () => {

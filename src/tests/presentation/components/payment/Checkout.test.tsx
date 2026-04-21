@@ -3,14 +3,10 @@ import { render, screen } from '@testing-library/react'
 import { Checkout } from '@/src/presentation/components/payment/Checkout'
 
 describe('Checkout Component', () => {
-  it('renders payment method and agreement containers', () => {
-    // Red Phase: Checkout 컴포넌트가 아직 존재하지 않으므로 이 테스트는 실패함
+  it('renders cards and setup button', () => {
     render(<Checkout amount={12000} orderId="test-order-123" orderName="Pro Plan" />)
     
-    const paymentContainer = document.getElementById('payment-method')
-    const agreementContainer = document.getElementById('agreement')
-    
-    expect(paymentContainer).not.toBeNull()
-    expect(agreementContainer).not.toBeNull()
+    expect(screen.getByText('안전한 정기결제 등록')).toBeInTheDocument()
+    expect(screen.getByText(/정기구독 시작하기|불러오는 중/)).toBeInTheDocument()
   })
 })
