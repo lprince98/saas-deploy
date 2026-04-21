@@ -1,6 +1,7 @@
 import React from 'react'
 import { createSupabaseServerClient } from '@/src/infrastructure/database/supabase-server'
 import { SupabaseNoteRepository } from '@/src/infrastructure/repositories/SupabaseNoteRepository'
+import { SupabaseUserRepository } from '@/src/infrastructure/repositories/SupabaseUserRepository'
 import { NoteUseCases } from '@/src/application/use-cases/NoteUseCases'
 import { NoteEditorClient } from '@/src/presentation/components/editor/NoteEditorClient'
 import { notFound } from 'next/navigation'
@@ -18,7 +19,8 @@ export default async function NotePage({ params }: NotePageProps) {
   const supabase = await createSupabaseServerClient()
 
   const noteRepo = new SupabaseNoteRepository(supabase)
-  const noteUseCases = new NoteUseCases(noteRepo)
+  const userRepo = new SupabaseUserRepository()
+  const noteUseCases = new NoteUseCases(noteRepo, userRepo)
 
   const note = await noteUseCases.getNoteById(id)
 

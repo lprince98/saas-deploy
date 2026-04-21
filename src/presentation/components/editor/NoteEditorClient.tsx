@@ -31,7 +31,7 @@ export function NoteEditorClient({ noteId, initialNote }: NoteEditorClientProps)
     try {
       const supabase = createSupabaseBrowserClient()
       const noteRepo = new SupabaseNoteRepository(supabase)
-      const noteUseCases = new NoteUseCases(noteRepo)
+      const noteUseCases = new NoteUseCases(noteRepo, null as any)
 
       await noteUseCases.updateNote({
         id: noteId,
