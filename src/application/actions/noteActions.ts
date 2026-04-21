@@ -21,6 +21,8 @@ export async function createNoteAction() {
   const userRepo = new SupabaseUserRepository()
   const noteUseCases = new NoteUseCases(noteRepo, userRepo)
 
+  let redirectPath = ''
+
   try {
     const newNote = await noteUseCases.createNote({
       userId: user.id,
@@ -30,18 +32,21 @@ export async function createNoteAction() {
     })
 
     if (newNote && newNote.id) {
-      redirect(`/notes/${newNote.id}`)
+      redirectPath = `/notes/${newNote.id}`
     }
   } catch (error: any) {
-    console.error('SERVER ACTION ERROR DETAIL:', JSON.stringify(error, null, 2))
-    
     if (error.name === 'SubscriptionRequiredError' || error.message?.includes('SubscriptionRequiredError')) {
       // 10개 한도 초과 시 요금제 페이지로 유도
-      redirect('/pricing')
+      redirectPath = '/pricing'
+    } else {
+      console.error('SERVER ACTION ERROR DETAIL:', JSON.stringify(error, null, 2))
+      // 리다이렉트 에러가 아닐 경우에만 다시 던짐
+      throw new Error(error.message || JSON.stringify(error) || '알 수 없는 서버 오류가 발생했습니다.');
     }
-    
-    // 로깅 후 구체적 에러 메시지를 프론트엔드로 던지기 위해
-    throw new Error(error.message || JSON.stringify(error) || '알 수 없는 서버 오류가 발생했습니다.');
+  }
+
+  if (redirectPath) {
+    redirect(redirectPath)
   }
 }
 
